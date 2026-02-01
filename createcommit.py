@@ -66,6 +66,13 @@ class Commit:
         current = Path.cwd() 
         pat = Path(current)/Path('folder1')
         tree_hash=tree.read_path(pat) 
+        print(tree_hash)
+        treeHash_path = current / "obj" /tree_hash
+
+        # if treeHash_path.exists():
+        #     raise Exception('cant commit no changs')
+          
+
         commit_hash=self.create_commit(tree_hash,message) 
 
         comref_path = Path(current) / Path("ref") / Path('branches') /Path(self.branch) / Path("commitRef")
