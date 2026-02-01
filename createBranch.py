@@ -32,11 +32,14 @@ branch_base.mkdir(parents=True, exist_ok=False)
 
 commitRef = branch_base / "commitRef"
 head = branch_base / "head"
-
+head_content=head_content+'\n'
 
 commitRef.write_text(head_content, encoding="utf-8")
+
 head.write_text(head_content, encoding="utf-8")
 
 print(f"Branch '{new_branch}' created at {head_content}")
+
+
 
 

@@ -32,14 +32,11 @@ branch_path = cwd / "ref" / "branches" / branch
 head_file = branch_path / "head"
 commitref_file = branch_path / "commitRef"
 
-entry = f"{commit_hash}\t{message}"
 
+entry = f"{commit_hash}\t{message}"
+print(entry)
 
 head_file.write_text(entry, encoding="utf-8")
-
-
-with commitref_file.open("a", encoding="utf-8") as f:
-    f.write(entry + "\n")
 
 print(f"[{branch} {commit_hash}] {message}")
 
