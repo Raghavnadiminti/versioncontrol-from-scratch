@@ -22,7 +22,6 @@ class CreateBlob:
     def write_blob(self,data,hash):
         from pathlib import Path
         obj_path=self.basePath
-     
         path = obj_path/Path(hash)
         path.parent.mkdir(parents=True, exist_ok=True)
        

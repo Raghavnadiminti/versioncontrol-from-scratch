@@ -11,13 +11,13 @@ def create_bundle(bundle_path):
         sys.exit(1)
 
     if bundle.exists():
-        print("Bundle path already exists")
-        sys.exit(1)
+        shutil.rmtree(bundle)
 
     bundle.mkdir(parents=True)
 
     shutil.copytree(repo / "obj", bundle / "obj")
-    shutil.copytree(repo / "ref", bundle / "ref")
+    shutil.copytree(repo / "ref", bundle / "ref") 
+    shutil.copyfile(repo/"metadata.json",bundle/"metadata.json")
 
 curr=Path.cwd()
-create_bundle(curr/'bundle')
+# create_bundle(curr/'bundle')
