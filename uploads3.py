@@ -2,11 +2,12 @@ from pathlib import Path
 import boto3
 from botocore.exceptions import ClientError
 from bundle import create_bundle
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
+
 load_dotenv()
 
 
-# BUCKET_NAME = ""
+# BUCKET_NAME = 
 
 IGNORE_DIRS = {
     ".git",
@@ -148,7 +149,7 @@ def upload_repo_safe(
 
    
     validate_name(user_id, "user_id")
-    validate_name(repo_name, "repo_name")
+    validate_name(repo_name, "repo_name") 
 
    
     bucket_accessible()
